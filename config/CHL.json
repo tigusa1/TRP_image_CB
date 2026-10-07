@@ -1,0 +1,1879 @@
+{
+  "country": "CHL",
+  "variable": "CPI",
+  "input_directory": "/Users/ti/Library/CloudStorage/OneDrive-JohnsHopkins/T Rowe Price climate project/CHL/Inflation_screenshots",
+  "output_directory": "output/CHL",
+  "directory_timeout_seconds": 20,
+  "calibration_defaults": {
+    "historical_rgb": [
+      0,
+      0,
+      0
+    ],
+    "historical_color_tolerance": 45,
+    "plot_box_style": "open_axes",
+    "x_start": "2004Q1",
+    "x_end": "2014Q2",
+    "y_min": -3,
+    "y_max": 12
+  },
+  "images": {
+    "CHL_2012_Q2.png": {
+      "image_size": [
+        1214,
+        1438
+      ],
+      "plot_box": [
+        116,
+        247,
+        1142,
+        887
+      ],
+      "y_min": -3,
+      "y_max": 12,
+      "x_start": "2004Q1",
+      "x_end": "2014Q2",
+      "last_historical": "2012Q1",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22,
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes",
+      "review_status": "seed_visually_checked",
+      "notes": "Initial CHL sample calibrated from visible axes and quarterly knots. Forecast uses darkest red-band midpoint; statistical median not verified."
+    },
+    "CHL_2012_Q3.png": {
+      "image_size": [
+        958,
+        1198
+      ],
+      "plot_box": [
+        92.5,
+        216.0,
+        918.0,
+        746.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2014Q3",
+      "last_historical": "2012Q2",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2012_Q4.png": {
+      "image_size": [
+        1026,
+        1318
+      ],
+      "plot_box": [
+        79.5,
+        166.0,
+        1008.0,
+        755.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2014Q4",
+      "last_historical": "2012Q3",
+      "curve_rgb": [
+        146,
+        50,
+        48
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2013_Q1.png": {
+      "image_size": [
+        1206,
+        1572
+      ],
+      "plot_box": [
+        108.0,
+        277.0,
+        1154.0,
+        942.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2015Q1",
+      "last_historical": "2012Q4",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2013_Q2.png": {
+      "image_size": [
+        1186,
+        1506
+      ],
+      "plot_box": [
+        95.0,
+        254.0,
+        1123.0,
+        907.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2015Q2",
+      "last_historical": "2013Q1",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2013_Q3.png": {
+      "image_size": [
+        1194,
+        1512
+      ],
+      "plot_box": [
+        93.0,
+        262.0,
+        1137.0,
+        947.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2015Q3",
+      "last_historical": "2013Q2",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2013_Q4.png": {
+      "image_size": [
+        1306,
+        1606
+      ],
+      "plot_box": [
+        109.0,
+        225.0,
+        1270.0,
+        972.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2015Q4",
+      "last_historical": "2013Q3",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2014_Q1.png": {
+      "image_size": [
+        1286,
+        1284
+      ],
+      "plot_box": [
+        116,
+        290,
+        1225,
+        1002
+      ],
+      "y_min": -4,
+      "y_max": 10,
+      "x_start": "2007Q1",
+      "x_end": "2016Q1",
+      "last_historical": "2013Q4",
+      "curve_rgb": [
+        191,
+        53,
+        62
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed. Historical colour corrected from visible CPI line; inspect updated overlay.",
+      "historical_rgb": [
+        61,
+        102,
+        159
+      ],
+      "historical_color_tolerance": 22,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2014_Q2.png": {
+      "image_size": [
+        1300,
+        1610
+      ],
+      "plot_box": [
+        85.0,
+        213.0,
+        1245.0,
+        949.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2016Q2",
+      "last_historical": "2014Q2",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2014_Q3.png": {
+      "image_size": [
+        1308,
+        1640
+      ],
+      "plot_box": [
+        109.5,
+        202.0,
+        1256.0,
+        938.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2016Q3",
+      "last_historical": "2014Q2",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2014_Q4.png": {
+      "image_size": [
+        1160,
+        1404
+      ],
+      "plot_box": [
+        81.5,
+        179.0,
+        1137.0,
+        856.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2016Q4",
+      "last_historical": "2014Q3",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2015_Q1.png": {
+      "image_size": [
+        1388,
+        1618
+      ],
+      "plot_box": [
+        128.0,
+        223.0,
+        1328.0,
+        988.0
+      ],
+      "y_min": -3.0,
+      "y_max": 12.0,
+      "x_start": "2004Q1",
+      "x_end": "2017Q1",
+      "last_historical": "2015Q1",
+      "curve_rgb": [
+        145,
+        48,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2015_Q2.png": {
+      "image_size": [
+        1208,
+        1570
+      ],
+      "plot_box": [
+        85.5,
+        201.0,
+        1183.0,
+        907.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2017Q2",
+      "last_historical": "2015Q1",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2015_Q3.png": {
+      "image_size": [
+        1316,
+        1598
+      ],
+      "plot_box": [
+        87.5,
+        198.0,
+        1247.0,
+        908.0
+      ],
+      "y_min": -2.0,
+      "y_max": 10.0,
+      "x_start": "2010Q1",
+      "x_end": "2017Q3",
+      "last_historical": "2015Q2",
+      "curve_rgb": [
+        162,
+        38,
+        37
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2015_Q4.png": {
+      "image_size": [
+        1232,
+        1530
+      ],
+      "plot_box": [
+        94.0,
+        219.0,
+        1214.0,
+        907.0
+      ],
+      "y_min": -2.0,
+      "y_max": 10.0,
+      "x_start": "2010Q1",
+      "x_end": "2017Q4",
+      "last_historical": "2015Q3",
+      "curve_rgb": [
+        161,
+        38,
+        37
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2016_Q1.png": {
+      "image_size": [
+        1268,
+        1576
+      ],
+      "plot_box": [
+        110.5,
+        199.0,
+        1223.0,
+        931.0
+      ],
+      "y_min": -2.0,
+      "y_max": 10.0,
+      "x_start": "2010Q1",
+      "x_end": "2018Q1",
+      "last_historical": "2015Q4",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2016_Q2.png": {
+      "image_size": [
+        1216,
+        1524
+      ],
+      "plot_box": [
+        108.5,
+        201.0,
+        1190.0,
+        892.0
+      ],
+      "y_min": -2.0,
+      "y_max": 10.0,
+      "x_start": "2010Q1",
+      "x_end": "2018Q2",
+      "last_historical": "2016Q1",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2016_Q3.png": {
+      "image_size": [
+        1290,
+        1544
+      ],
+      "plot_box": [
+        81.5,
+        182.0,
+        1238.0,
+        928.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2018Q3",
+      "last_historical": "2016Q2",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2016_Q4.png": {
+      "image_size": [
+        1272,
+        1566
+      ],
+      "plot_box": [
+        87.5,
+        209.0,
+        1247.0,
+        952.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2018Q4",
+      "last_historical": "2016Q3",
+      "curve_rgb": [
+        145,
+        47,
+        45
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2017_Q1.png": {
+      "image_size": [
+        1224,
+        1520
+      ],
+      "plot_box": [
+        88.5,
+        198.0,
+        1190.0,
+        905.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2019Q1",
+      "last_historical": "2016Q4",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2017_Q2.png": {
+      "image_size": [
+        1286,
+        1548
+      ],
+      "plot_box": [
+        81.5,
+        200.0,
+        1258.0,
+        949.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2019Q2",
+      "last_historical": "2017Q1",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2017_Q3.png": {
+      "image_size": [
+        1190,
+        1508
+      ],
+      "plot_box": [
+        55.5,
+        171.0,
+        1154.0,
+        873.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2019Q3",
+      "last_historical": "2017Q2",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2017_Q4.png": {
+      "image_size": [
+        1274,
+        1584
+      ],
+      "plot_box": [
+        83.5,
+        182.0,
+        1244.0,
+        931.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2019Q4",
+      "last_historical": "2017Q3",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2018_Q1.png": {
+      "image_size": [
+        1288,
+        1578
+      ],
+      "plot_box": [
+        98.5,
+        208.0,
+        1266.0,
+        961.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2020Q3",
+      "last_historical": "2018Q1",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2018_Q2.png": {
+      "image_size": [
+        1106,
+        1534
+      ],
+      "plot_box": [
+        85.5,
+        180.0,
+        1072.0,
+        799.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2020Q4",
+      "last_historical": "2018Q2",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2018_Q3.png": {
+      "image_size": [
+        1114,
+        1478
+      ],
+      "plot_box": [
+        81.5,
+        185.0,
+        1088.0,
+        828.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2020Q4",
+      "last_historical": "2018Q3",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2018_Q4.png": {
+      "image_size": [
+        1166,
+        1502
+      ],
+      "plot_box": [
+        72.5,
+        194.0,
+        1136.0,
+        867.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2010Q1",
+      "x_end": "2020Q4",
+      "last_historical": "2018Q3",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2019_Q1.png": {
+      "image_size": [
+        1966,
+        1582
+      ],
+      "plot_box": [
+        124.0,
+        314.0,
+        1912.0,
+        1437.0
+      ],
+      "y_min": -2.0,
+      "y_max": 8.0,
+      "x_start": "2015Q1",
+      "x_end": "2021Q4",
+      "last_historical": "2018Q4",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2019_Q2.png": {
+      "image_size": [
+        1622,
+        1356
+      ],
+      "plot_box": [
+        101.0,
+        281.0,
+        1595.0,
+        1228.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2018Q1",
+      "x_end": "2021Q4",
+      "last_historical": "2019Q1",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2019_Q3.png": {
+      "image_size": [
+        1828,
+        1488
+      ],
+      "plot_box": [
+        124.5,
+        314.0,
+        1771.0,
+        1366.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2018Q1",
+      "x_end": "2021Q4",
+      "last_historical": "2019Q2",
+      "curve_rgb": [
+        146,
+        48,
+        46
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2019_Q4.png": {
+      "image_size": [
+        990,
+        1181
+      ],
+      "plot_box": [
+        75.5,
+        149.0,
+        910.0,
+        671.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2018Q1",
+      "x_end": "2021Q4",
+      "last_historical": "2019Q3",
+      "curve_rgb": [
+        218,
+        50,
+        50
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2020_Q1.png": {
+      "image_size": [
+        1898,
+        1558
+      ],
+      "plot_box": [
+        133.5,
+        369.0,
+        1838.0,
+        1446.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2018Q1",
+      "x_end": "2022Q4",
+      "last_historical": "2019Q4",
+      "curve_rgb": [
+        201,
+        68,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2020_Q2.png": {
+      "image_size": [
+        1858,
+        1584
+      ],
+      "plot_box": [
+        152.0,
+        435.0,
+        1814.0,
+        1437.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2018Q1",
+      "x_end": "2022Q4",
+      "last_historical": "2020Q1",
+      "curve_rgb": [
+        201,
+        68,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2020_Q3.png": {
+      "image_size": [
+        1272,
+        1598
+      ],
+      "plot_box": [
+        113.5,
+        258.0,
+        1217.0,
+        905.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2018Q1",
+      "x_end": "2022Q4",
+      "last_historical": "2020Q2",
+      "curve_rgb": [
+        234,
+        51,
+        35
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2020_Q4.png": {
+      "image_size": [
+        1354,
+        1486
+      ],
+      "plot_box": [
+        154.0,
+        179.0,
+        1320.0,
+        1009.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2019Q1",
+      "x_end": "2022Q4",
+      "last_historical": "2020Q3",
+      "curve_rgb": [
+        234,
+        51,
+        35
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2021_Q1.png": {
+      "image_size": [
+        962,
+        1482
+      ],
+      "plot_box": [
+        89.5,
+        242.0,
+        939.0,
+        1353.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2019Q1",
+      "x_end": "2023Q4",
+      "last_historical": "2020Q4",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2021_Q2.png": {
+      "image_size": [
+        1034,
+        1490
+      ],
+      "plot_box": [
+        124.0,
+        262.0,
+        998.0,
+        1349.0
+      ],
+      "y_min": 0.0,
+      "y_max": 6.0,
+      "x_start": "2019Q1",
+      "x_end": "2023Q4",
+      "last_historical": "2021Q1",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2021_Q3.png": {
+      "image_size": [
+        1168,
+        1560
+      ],
+      "plot_box": [
+        136.5,
+        200.0,
+        1128.0,
+        1420.0
+      ],
+      "y_min": 0.0,
+      "y_max": 7.0,
+      "x_start": "2019Q1",
+      "x_end": "2023Q4",
+      "last_historical": "2021Q2",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2021_Q4.png": {
+      "image_size": [
+        1110,
+        1464
+      ],
+      "plot_box": [
+        119.5,
+        161.0,
+        1084.0,
+        1340.0
+      ],
+      "y_min": 0.0,
+      "y_max": 8.0,
+      "x_start": "2019Q1",
+      "x_end": "2023Q4",
+      "last_historical": "2021Q3",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2022_Q1.png": {
+      "image_size": [
+        1130,
+        1520
+      ],
+      "plot_box": [
+        182.0,
+        213.0,
+        1105.0,
+        1391.0
+      ],
+      "y_min": 0.0,
+      "y_max": 8.0,
+      "x_start": "2020Q1",
+      "x_end": "2024Q4",
+      "last_historical": "2021Q4",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2022_Q2.png": {
+      "image_size": [
+        1144,
+        1576
+      ],
+      "plot_box": [
+        147.0,
+        196.0,
+        1121.0,
+        1436.0
+      ],
+      "y_min": 0.0,
+      "y_max": 13.0,
+      "x_start": "2020Q1",
+      "x_end": "2024Q4",
+      "last_historical": "2022Q1",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2022_Q3.png": {
+      "image_size": [
+        1034,
+        1414
+      ],
+      "plot_box": [
+        122.0,
+        163.0,
+        1004.0,
+        1285.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2024Q4",
+      "last_historical": "2022Q2",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2022_Q4.png": {
+      "image_size": [
+        1028,
+        1420
+      ],
+      "plot_box": [
+        121.5,
+        160.0,
+        1008.0,
+        1292.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2024Q4",
+      "last_historical": "2022Q3",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2023_Q1.png": {
+      "image_size": [
+        1176,
+        1598
+      ],
+      "plot_box": [
+        143.5,
+        216.0,
+        1119.0,
+        1453.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2025Q1",
+      "last_historical": "2022Q4",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2023_Q2.png": {
+      "image_size": [
+        1156,
+        1552
+      ],
+      "plot_box": [
+        150.5,
+        159.0,
+        1127.0,
+        1400.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2025Q2",
+      "last_historical": "2023Q1",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2023_Q3.png": {
+      "image_size": [
+        1124,
+        1490
+      ],
+      "plot_box": [
+        153.5,
+        150.0,
+        1091.0,
+        1344.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2025Q3",
+      "last_historical": "2023Q2",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2023_Q4.png": {
+      "image_size": [
+        1116,
+        1524
+      ],
+      "plot_box": [
+        146.5,
+        176.0,
+        1097.0,
+        1389.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2025Q4",
+      "last_historical": "2023Q3",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2024_Q1.png": {
+      "image_size": [
+        1144,
+        1572
+      ],
+      "plot_box": [
+        149.5,
+        175.0,
+        1073.0,
+        1421.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2026Q1",
+      "last_historical": "2023Q4",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2024_Q2.png": {
+      "image_size": [
+        1062,
+        1460
+      ],
+      "plot_box": [
+        147.0,
+        158.0,
+        1044.0,
+        1333.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2026Q2",
+      "last_historical": "2024Q1",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2024_Q3.png": {
+      "image_size": [
+        1034,
+        1412
+      ],
+      "plot_box": [
+        130.5,
+        177.0,
+        1004.0,
+        1287.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2026Q3",
+      "last_historical": "2024Q2",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2024_Q4.png": {
+      "image_size": [
+        1128,
+        1538
+      ],
+      "plot_box": [
+        135.5,
+        173.0,
+        1107.0,
+        1409.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2026Q4",
+      "last_historical": "2024Q3",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2025_Q1.png": {
+      "image_size": [
+        1104,
+        1494
+      ],
+      "plot_box": [
+        150.0,
+        154.0,
+        1052.0,
+        1358.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2027Q1",
+      "last_historical": "2024Q4",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2025_Q2.png": {
+      "image_size": [
+        1198,
+        1632
+      ],
+      "plot_box": [
+        163.5,
+        187.0,
+        1152.0,
+        1488.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2020Q1",
+      "x_end": "2027Q2",
+      "last_historical": "2025Q1",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2025_Q3.png": {
+      "image_size": [
+        800,
+        760
+      ],
+      "plot_box": [
+        105.0,
+        209.0,
+        770.0,
+        704.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2021Q1",
+      "x_end": "2027Q3",
+      "last_historical": "2025Q2",
+      "curve_rgb": [
+        204,
+        102,
+        94
+      ],
+      "color_tolerance": 50,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed. Historical colour corrected from visible CPI line; inspect updated overlay. Forecast colour tolerance includes the red stroke on both white and gray backgrounds at the shading boundary.",
+      "historical_rgb": [
+        51,
+        110,
+        177
+      ],
+      "historical_color_tolerance": 22,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2025_Q4.png": {
+      "image_size": [
+        1178,
+        1132
+      ],
+      "plot_box": [
+        148.0,
+        367.0,
+        1146.0,
+        1040.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2021Q1",
+      "x_end": "2027Q4",
+      "last_historical": "2025Q3",
+      "curve_rgb": [
+        204,
+        102,
+        94
+      ],
+      "color_tolerance": 50,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed. Historical colour corrected from visible CPI line; inspect updated overlay. Forecast colour tolerance includes the red stroke on both white and gray backgrounds at the shading boundary.",
+      "historical_rgb": [
+        127,
+        128,
+        128
+      ],
+      "historical_color_tolerance": 22,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2026_Q1.png": {
+      "image_size": [
+        1108,
+        1462
+      ],
+      "plot_box": [
+        169.0,
+        171.0,
+        1028.0,
+        1327.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2021Q1",
+      "x_end": "2028Q1",
+      "last_historical": "2025Q4",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2026_Q2.png": {
+      "image_size": [
+        854,
+        1200
+      ],
+      "plot_box": [
+        105.0,
+        150.0,
+        826.0,
+        1099.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2021Q1",
+      "x_end": "2028Q2",
+      "last_historical": "2026Q1",
+      "curve_rgb": [
+        201,
+        66,
+        59
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    },
+    "CHL_2026_Q3.png": {
+      "image_size": [
+        1086,
+        1474
+      ],
+      "plot_box": [
+        152.5,
+        177.0,
+        1033.0,
+        1352.0
+      ],
+      "y_min": 0.0,
+      "y_max": 14.0,
+      "x_start": "2021Q1",
+      "x_end": "2028Q3",
+      "last_historical": "2026Q2",
+      "curve_rgb": [
+        234,
+        51,
+        35
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed.",
+      "historical_rgb": [
+        0,
+        0,
+        0
+      ],
+      "historical_color_tolerance": 45,
+      "plot_box_style": "open_axes"
+    }
+  },
+  "last_calibrated_image": "CHL_2026_Q3.png"
+}

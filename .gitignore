@@ -1,0 +1,19 @@
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+.DS_Store
+output/
+
+# Local datasets, distribution archives, and calibration backups
+data/
+dist/
+config/backups/
+config/*.before_*.json
+*.bak
+*.tmp
+
+# Local credentials
+.env
+.env.*
+!.env.example
