@@ -1,6 +1,7 @@
 """Review only numeric vertical-axis limits while preserving pixel calibration."""
 from __future__ import annotations
 import json
+from .configuration import load_working_config, input_directory
 import math
 from datetime import datetime, timezone
 from pathlib import Path
@@ -27,7 +28,7 @@ def save_axis_limits(config_path, filename, y_min, y_max, backup_path):
     if not math.isfinite(low) or not math.isfinite(high) or low >= high:
         raise ValueError('Enter finite numbers with Y minimum smaller than Y maximum.')
     # Reload at save time, so unrelated edits and chart records are preserved.
-    config = json.loads(config_path.read_text())
+    config = load_working_config(config_path)
     if filename not in config.get('images', {}):
         raise ValueError('This image has no saved calibration. Use calibrate.py first.')
     updated = dict(config['images'][filename])
@@ -49,12 +50,12 @@ def save_axis_limits(config_path, filename, y_min, y_max, backup_path):
 def launch_axis_review(config_path, filename, *, position=None, backup_path=None, initial_limits=None, initial_source=None):
     import matplotlib.pyplot as plt
     from matplotlib.widgets import TextBox, Button
-    config = json.loads(config_path.read_text())
+    config = load_working_config(config_path)
     if Path(filename).name != filename or filename not in config.get('images', {}):
         raise ValueError('Select a filename with a saved calibration.')
     saved = config['images'][filename]
     initial = initial_limits if initial_limits is not None else saved
-    source = Path(config['input_directory']).expanduser()/filename
+    source = input_directory(config)/filename
     with Image.open(source) as image:
         image = image.convert('RGB')
     if list(image.size) != saved['image_size']:
@@ -122,7 +123,7 @@ def launch_axis_review(config_path, filename, *, position=None, backup_path=None
 
 
 def review_axis_queue(config_path, *, image=None, start_at=None, include_reviewed=False):
-    config = json.loads(config_path.read_text())
+    config = load_working_config(config_path)
     saved = config.get('images', {})
     names = sorted(saved, key=report_sort_key)
     if image:
@@ -155,7 +156,7 @@ def review_axis_queue(config_path, *, image=None, start_at=None, include_reviewe
                 completed+=1
                 # Only confirmed values carry forward; Skip/Stop cannot make
                 # unsaved edits the next chart's defaults.
-                latest = json.loads(config_path.read_text())['images'][name]
+                latest = load_working_config(config_path)['images'][name]
                 initial_limits = {key: latest[key] for key in ('y_min','y_max')}
                 previous = name
             elif outcome=='stopped':

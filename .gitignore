@@ -17,3 +17,6 @@ config/*.before_*.json
 .env
 .env.*
 !.env.example
+
+# Personal working calibrations; shared examples live in config/seeds/
+/config/*.json

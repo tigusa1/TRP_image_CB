@@ -1,89 +1,10 @@
 {
   "country": "THA",
-  "input_directory": "/Users/ti/Library/CloudStorage/OneDrive-JohnsHopkins/T Rowe Price climate project/THA/Inflation screenshots",
-  "output_directory": "output/THA",
   "directory_timeout_seconds": 20,
+  "config_role": "seed",
+  "input_directory": "data/THA/screenshots",
+  "output_directory": "output/THA",
   "images": {
-    "THA_2000_Q4.png": {
-      "image_size": [
-        1010,
-        714
-      ],
-      "plot_box": [
-        119,
-        153,
-        881,
-        595
-      ],
-      "y_min": -1.0,
-      "y_max": 4.0,
-      "x_start": "1999Q1",
-      "x_end": "2002Q3",
-      "last_historical": "2000Q3",
-      "curve_rgb": [
-        35,
-        68,
-        134
-      ],
-      "color_tolerance": 22,
-      "review_status": "seed_visually_checked",
-      "notes": "Quarter positions inferred from Q1 labels; forecast uses darkest-band midpoint, not a verified statistical median.",
-      "axis_limits_review": {
-        "reviewed_at": "2026-10-06T00:26:43.559791+00:00",
-        "y_min": -1.0,
-        "y_max": 4.0,
-        "plot_box": [
-          119,
-          153,
-          881,
-          595
-        ],
-        "image_size": [
-          1010,
-          714
-        ]
-      }
-    },
-    "THA_2025_Q3.png": {
-      "image_size": [
-        1118,
-        710
-      ],
-      "plot_box": [
-        92,
-        215,
-        986,
-        611
-      ],
-      "y_min": -4.0,
-      "y_max": 10.0,
-      "x_start": "2022Q1",
-      "x_end": "2027Q3",
-      "last_historical": "2025Q3",
-      "curve_rgb": [
-        87,
-        119,
-        192
-      ],
-      "color_tolerance": 22,
-      "review_status": "seed_visually_checked",
-      "notes": "Quarter positions inferred from year labels; forecast uses darkest-band midpoint, not a verified statistical median.",
-      "axis_limits_review": {
-        "reviewed_at": "2026-10-06T00:39:33.381709+00:00",
-        "y_min": -4.0,
-        "y_max": 10.0,
-        "plot_box": [
-          92,
-          215,
-          986,
-          611
-        ],
-        "image_size": [
-          1118,
-          710
-        ]
-      }
-    },
     "THA_2000_Q3.png": {
       "image_size": [
         994,
@@ -121,6 +42,46 @@
         "image_size": [
           994,
           708
+        ]
+      }
+    },
+    "THA_2000_Q4.png": {
+      "image_size": [
+        1010,
+        714
+      ],
+      "plot_box": [
+        119,
+        153,
+        881,
+        595
+      ],
+      "y_min": -1.0,
+      "y_max": 4.0,
+      "x_start": "1999Q1",
+      "x_end": "2002Q3",
+      "last_historical": "2000Q3",
+      "curve_rgb": [
+        35,
+        68,
+        134
+      ],
+      "color_tolerance": 22,
+      "review_status": "seed_visually_checked",
+      "notes": "Quarter positions inferred from Q1 labels; forecast uses darkest-band midpoint, not a verified statistical median.",
+      "axis_limits_review": {
+        "reviewed_at": "2026-10-06T00:26:43.559791+00:00",
+        "y_min": -1.0,
+        "y_max": 4.0,
+        "plot_box": [
+          119,
+          153,
+          881,
+          595
+        ],
+        "image_size": [
+          1010,
+          714
         ]
       }
     },
@@ -3989,6 +3950,46 @@
         ]
       }
     },
+    "THA_2025_Q3.png": {
+      "image_size": [
+        1118,
+        710
+      ],
+      "plot_box": [
+        92,
+        215,
+        986,
+        611
+      ],
+      "y_min": -4.0,
+      "y_max": 10.0,
+      "x_start": "2022Q1",
+      "x_end": "2027Q3",
+      "last_historical": "2025Q3",
+      "curve_rgb": [
+        87,
+        119,
+        192
+      ],
+      "color_tolerance": 22,
+      "review_status": "seed_visually_checked",
+      "notes": "Quarter positions inferred from year labels; forecast uses darkest-band midpoint, not a verified statistical median.",
+      "axis_limits_review": {
+        "reviewed_at": "2026-10-06T00:39:33.381709+00:00",
+        "y_min": -4.0,
+        "y_max": 10.0,
+        "plot_box": [
+          92,
+          215,
+          986,
+          611
+        ],
+        "image_size": [
+          1118,
+          710
+        ]
+      }
+    },
     "THA_2025_Q4.png": {
       "image_size": [
         1098,
@@ -4094,6 +4095,5 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     }
-  },
-  "last_calibrated_image": "THA_2026_Q2.png"
+  }
 }

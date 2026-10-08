@@ -1,8 +1,6 @@
 {
   "country": "BRA",
   "variable": "CPI",
-  "input_directory": "/Users/ti/Library/CloudStorage/OneDrive-JohnsHopkins/T Rowe Price climate project/BRA/Inflation screenshots/finished digitizing",
-  "output_directory": "output/BRA",
   "directory_timeout_seconds": 20,
   "calibration_defaults": {
     "x_start": "2011Q3",
@@ -10,32 +8,10 @@
     "y_min": -2,
     "y_max": 10
   },
+  "config_role": "seed",
+  "input_directory": "data/BRA/screenshots",
+  "output_directory": "output/BRA",
   "images": {
-    "BRA_2012_Sep.png": {
-      "image_size": [
-        1162,
-        1384
-      ],
-      "plot_box": [
-        187,
-        197,
-        1064,
-        1187
-      ],
-      "y_min": -2,
-      "y_max": 10,
-      "x_start": "2011Q3",
-      "x_end": "2014Q3",
-      "last_historical": "2012Q2",
-      "curve_rgb": [
-        155,
-        103,
-        33
-      ],
-      "color_tolerance": 22,
-      "review_status": "seed_visually_checked",
-      "notes": "Gold market-scenario fan; quarterly knots. Calibration x bounds align with first and last quarterly data positions, inside padded axes."
-    },
     "BRA_2012_Dec.png": {
       "image_size": [
         680,
@@ -61,22 +37,47 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     },
-    "BRA_2013_Mar.png": {
+    "BRA_2012_Sep.png": {
       "image_size": [
-        1104,
-        1358
+        1162,
+        1384
       ],
       "plot_box": [
-        166.64,
-        188.59,
-        1040.46,
-        1179.87
+        187,
+        197,
+        1064,
+        1187
+      ],
+      "y_min": -2,
+      "y_max": 10,
+      "x_start": "2011Q3",
+      "x_end": "2014Q3",
+      "last_historical": "2012Q2",
+      "curve_rgb": [
+        155,
+        103,
+        33
+      ],
+      "color_tolerance": 22,
+      "review_status": "seed_visually_checked",
+      "notes": "Gold market-scenario fan; quarterly knots. Calibration x bounds align with first and last quarterly data positions, inside padded axes."
+    },
+    "BRA_2013_Dec.png": {
+      "image_size": [
+        1098,
+        1390
+      ],
+      "plot_box": [
+        154.57,
+        224.32,
+        1030.41,
+        1209.64
       ],
       "y_min": -2.0,
       "y_max": 10.0,
-      "x_start": "2012Q1",
-      "x_end": "2015Q1",
-      "last_historical": "2012Q4",
+      "x_start": "2012Q4",
+      "x_end": "2015Q4",
+      "last_historical": "2013Q3",
       "curve_rgb": [
         155,
         103,
@@ -111,6 +112,31 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     },
+    "BRA_2013_Mar.png": {
+      "image_size": [
+        1104,
+        1358
+      ],
+      "plot_box": [
+        166.64,
+        188.59,
+        1040.46,
+        1179.87
+      ],
+      "y_min": -2.0,
+      "y_max": 10.0,
+      "x_start": "2012Q1",
+      "x_end": "2015Q1",
+      "last_historical": "2012Q4",
+      "curve_rgb": [
+        155,
+        103,
+        33
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed."
+    },
     "BRA_2013_Sep.png": {
       "image_size": [
         1100,
@@ -127,106 +153,6 @@
       "x_start": "2012Q3",
       "x_end": "2015Q3",
       "last_historical": "2013Q2",
-      "curve_rgb": [
-        155,
-        103,
-        33
-      ],
-      "color_tolerance": 22.0,
-      "review_status": "manually_calibrated",
-      "notes": "Review generated overlay before changing review_status to reviewed."
-    },
-    "BRA_2013_Dec.png": {
-      "image_size": [
-        1098,
-        1390
-      ],
-      "plot_box": [
-        154.57,
-        224.32,
-        1030.41,
-        1209.64
-      ],
-      "y_min": -2.0,
-      "y_max": 10.0,
-      "x_start": "2012Q4",
-      "x_end": "2015Q4",
-      "last_historical": "2013Q3",
-      "curve_rgb": [
-        155,
-        103,
-        33
-      ],
-      "color_tolerance": 22.0,
-      "review_status": "manually_calibrated",
-      "notes": "Review generated overlay before changing review_status to reviewed."
-    },
-    "BRA_2014_Mar.png": {
-      "image_size": [
-        1082,
-        1382
-      ],
-      "plot_box": [
-        148.84,
-        190.96,
-        1022.55,
-        1198.79
-      ],
-      "y_min": -2.0,
-      "y_max": 10.0,
-      "x_start": "2013Q1",
-      "x_end": "2016Q1",
-      "last_historical": "2013Q4",
-      "curve_rgb": [
-        155,
-        103,
-        33
-      ],
-      "color_tolerance": 22.0,
-      "review_status": "manually_calibrated",
-      "notes": "Review generated overlay before changing review_status to reviewed."
-    },
-    "BRA_2014_Jun.png": {
-      "image_size": [
-        1098,
-        1392
-      ],
-      "plot_box": [
-        145.19,
-        184.51,
-        1025.23,
-        1206.49
-      ],
-      "y_min": -2.0,
-      "y_max": 10.0,
-      "x_start": "2013Q2",
-      "x_end": "2016Q2",
-      "last_historical": "2014Q1",
-      "curve_rgb": [
-        155,
-        103,
-        33
-      ],
-      "color_tolerance": 22.0,
-      "review_status": "manually_calibrated",
-      "notes": "Review generated overlay before changing review_status to reviewed."
-    },
-    "BRA_2014_Sep.png": {
-      "image_size": [
-        1094,
-        1394
-      ],
-      "plot_box": [
-        154.38,
-        181.84,
-        1027.83,
-        1205.28
-      ],
-      "y_min": -2.0,
-      "y_max": 10.0,
-      "x_start": "2013Q3",
-      "x_end": "2016Q3",
-      "last_historical": "2014Q2",
       "curve_rgb": [
         155,
         103,
@@ -261,6 +187,81 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     },
+    "BRA_2014_Jun.png": {
+      "image_size": [
+        1098,
+        1392
+      ],
+      "plot_box": [
+        145.19,
+        184.51,
+        1025.23,
+        1206.49
+      ],
+      "y_min": -2.0,
+      "y_max": 10.0,
+      "x_start": "2013Q2",
+      "x_end": "2016Q2",
+      "last_historical": "2014Q1",
+      "curve_rgb": [
+        155,
+        103,
+        33
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed."
+    },
+    "BRA_2014_Mar.png": {
+      "image_size": [
+        1082,
+        1382
+      ],
+      "plot_box": [
+        148.84,
+        190.96,
+        1022.55,
+        1198.79
+      ],
+      "y_min": -2.0,
+      "y_max": 10.0,
+      "x_start": "2013Q1",
+      "x_end": "2016Q1",
+      "last_historical": "2013Q4",
+      "curve_rgb": [
+        155,
+        103,
+        33
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed."
+    },
+    "BRA_2014_Sep.png": {
+      "image_size": [
+        1094,
+        1394
+      ],
+      "plot_box": [
+        154.38,
+        181.84,
+        1027.83,
+        1205.28
+      ],
+      "y_min": -2.0,
+      "y_max": 10.0,
+      "x_start": "2013Q3",
+      "x_end": "2016Q3",
+      "last_historical": "2014Q2",
+      "curve_rgb": [
+        155,
+        103,
+        33
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed."
+    },
     "BRA_2015_Dec.png": {
       "image_size": [
         1088,
@@ -277,6 +278,56 @@
       "x_start": "2014Q4",
       "x_end": "2017Q4",
       "last_historical": "2015Q3",
+      "curve_rgb": [
+        155,
+        103,
+        33
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed."
+    },
+    "BRA_2016_Dec.png": {
+      "image_size": [
+        1036,
+        1378
+      ],
+      "plot_box": [
+        130.85,
+        157.46,
+        976.83,
+        1205.98
+      ],
+      "y_min": 0.0,
+      "y_max": 12.0,
+      "x_start": "2015Q3",
+      "x_end": "2018Q4",
+      "last_historical": "2016Q3",
+      "curve_rgb": [
+        72,
+        131,
+        153
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed."
+    },
+    "BRA_2016_Jun.png": {
+      "image_size": [
+        1080,
+        1420
+      ],
+      "plot_box": [
+        151.05,
+        160.27,
+        1032.81,
+        1239.75
+      ],
+      "y_min": 0.0,
+      "y_max": 12.0,
+      "x_start": "2015Q2",
+      "x_end": "2018Q2",
+      "last_historical": "2016Q1",
       "curve_rgb": [
         155,
         103,
@@ -311,31 +362,6 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     },
-    "BRA_2016_Jun.png": {
-      "image_size": [
-        1080,
-        1420
-      ],
-      "plot_box": [
-        151.05,
-        160.27,
-        1032.81,
-        1239.75
-      ],
-      "y_min": 0.0,
-      "y_max": 12.0,
-      "x_start": "2015Q2",
-      "x_end": "2018Q2",
-      "last_historical": "2016Q1",
-      "curve_rgb": [
-        155,
-        103,
-        33
-      ],
-      "color_tolerance": 22.0,
-      "review_status": "manually_calibrated",
-      "notes": "Review generated overlay before changing review_status to reviewed."
-    },
     "BRA_2016_Sep.png": {
       "image_size": [
         1036,
@@ -361,24 +387,49 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     },
-    "BRA_2016_Dec.png": {
+    "BRA_2017_Dec.png": {
       "image_size": [
-        1036,
-        1378
+        2040,
+        1328
       ],
       "plot_box": [
-        130.85,
-        157.46,
-        976.83,
-        1205.98
+        299.14,
+        119.64,
+        1990.24,
+        1159.13
       ],
       "y_min": 0.0,
-      "y_max": 12.0,
-      "x_start": "2015Q3",
-      "x_end": "2018Q4",
-      "last_historical": "2016Q3",
+      "y_max": 8.0,
+      "x_start": "2017Q1",
+      "x_end": "2020Q4",
+      "last_historical": "2017Q3",
       "curve_rgb": [
-        72,
+        73,
+        132,
+        153
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed."
+    },
+    "BRA_2017_Jun.png": {
+      "image_size": [
+        2040,
+        1328
+      ],
+      "plot_box": [
+        292.98,
+        128.87,
+        1992.3,
+        1122.19
+      ],
+      "y_min": 0.0,
+      "y_max": 10.0,
+      "x_start": "2016Q1",
+      "x_end": "2019Q2",
+      "last_historical": "2017Q1",
+      "curve_rgb": [
+        74,
         131,
         153
       ],
@@ -411,31 +462,6 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     },
-    "BRA_2017_Jun.png": {
-      "image_size": [
-        2040,
-        1328
-      ],
-      "plot_box": [
-        292.98,
-        128.87,
-        1992.3,
-        1122.19
-      ],
-      "y_min": 0.0,
-      "y_max": 10.0,
-      "x_start": "2016Q1",
-      "x_end": "2019Q2",
-      "last_historical": "2017Q1",
-      "curve_rgb": [
-        74,
-        131,
-        153
-      ],
-      "color_tolerance": 22.0,
-      "review_status": "manually_calibrated",
-      "notes": "Review generated overlay before changing review_status to reviewed."
-    },
     "BRA_2017_Sep.png": {
       "image_size": [
         2040,
@@ -461,47 +487,22 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     },
-    "BRA_2017_Dec.png": {
-      "image_size": [
-        2040,
-        1328
-      ],
-      "plot_box": [
-        299.14,
-        119.64,
-        1990.24,
-        1159.13
-      ],
-      "y_min": 0.0,
-      "y_max": 8.0,
-      "x_start": "2017Q1",
-      "x_end": "2020Q4",
-      "last_historical": "2017Q3",
-      "curve_rgb": [
-        73,
-        132,
-        153
-      ],
-      "color_tolerance": 22.0,
-      "review_status": "manually_calibrated",
-      "notes": "Review generated overlay before changing review_status to reviewed."
-    },
-    "BRA_2018_Mar.png": {
+    "BRA_2018_Dec.png": {
       "image_size": [
         2422,
         1328
       ],
       "plot_box": [
-        438.09,
-        137.19,
-        2131.54,
-        1176.41
+        334.54,
+        115.26,
+        2327.69,
+        1070.42
       ],
       "y_min": 0.0,
       "y_max": 8.0,
-      "x_start": "2017Q1",
-      "x_end": "2020Q4",
-      "last_historical": "2017Q4",
+      "x_start": "2018Q1",
+      "x_end": "2021Q4",
+      "last_historical": "2018Q3",
       "curve_rgb": [
         73,
         131,
@@ -536,6 +537,31 @@
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
     },
+    "BRA_2018_Mar.png": {
+      "image_size": [
+        2422,
+        1328
+      ],
+      "plot_box": [
+        438.09,
+        137.19,
+        2131.54,
+        1176.41
+      ],
+      "y_min": 0.0,
+      "y_max": 8.0,
+      "x_start": "2017Q1",
+      "x_end": "2020Q4",
+      "last_historical": "2017Q4",
+      "curve_rgb": [
+        73,
+        131,
+        153
+      ],
+      "color_tolerance": 22.0,
+      "review_status": "manually_calibrated",
+      "notes": "Review generated overlay before changing review_status to reviewed."
+    },
     "BRA_2018_Sep.png": {
       "image_size": [
         2422,
@@ -560,33 +586,6 @@
       "color_tolerance": 22.0,
       "review_status": "manually_calibrated",
       "notes": "Review generated overlay before changing review_status to reviewed."
-    },
-    "BRA_2018_Dec.png": {
-      "image_size": [
-        2422,
-        1328
-      ],
-      "plot_box": [
-        334.54,
-        115.26,
-        2327.69,
-        1070.42
-      ],
-      "y_min": 0.0,
-      "y_max": 8.0,
-      "x_start": "2018Q1",
-      "x_end": "2021Q4",
-      "last_historical": "2018Q3",
-      "curve_rgb": [
-        73,
-        131,
-        153
-      ],
-      "color_tolerance": 22.0,
-      "review_status": "manually_calibrated",
-      "notes": "Review generated overlay before changing review_status to reviewed."
     }
-  },
-  "notes": "Quarterly charts only. Only PNGs in the configured finished digitizing folder are eligible. No report-date cutoff. Report filenames with month names are converted to report quarters.",
-  "last_calibrated_image": "BRA_2018_Dec.png"
+  }
 }

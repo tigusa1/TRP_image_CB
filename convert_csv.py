@@ -1,6 +1,7 @@
 """Run directly in PyCharm to export all saved chart CSVs in downstream format."""
 import argparse
 import json
+from inflation_digitizer.configuration import load_working_config, input_directory
 from pathlib import Path
 import sys
 from inflation_digitizer.batch import DEFAULT_CONFIG, resolve_output
@@ -15,7 +16,7 @@ def main():
     parser.add_argument('--variable', default='CPI', help='Variable label; default CPI')
     args = parser.parse_args()
     try:
-        config = json.loads(args.config.read_text())
+        config = load_working_config(args.config)
         out = resolve_output(config)
         source = args.input or out/'tables'
         destination = args.output or out/'forecasts.csv'

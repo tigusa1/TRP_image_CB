@@ -7,7 +7,7 @@ from unittest.mock import patch
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.backend_bases import MouseEvent
+from matplotlib.backend_bases import MouseEvent, Event
 from PIL import Image, ImageDraw
 import calibrate
 
@@ -114,12 +114,34 @@ class QueueTests(unittest.TestCase):
             button('−',1)
             self.assertEqual(field(.41),'5')
             button('+',1)
+            cross_x = next(line for line in ax.lines if line.get_gid() == 'cursor-crosshair-x')
+            cross_y = next(line for line in ax.lines if line.get_gid() == 'cursor-crosshair-y')
+            def check_crosshairs(x, y):
+                event('motion_notify_event',x,y)
+                self.assertTrue(cross_x.get_visible())
+                self.assertTrue(cross_y.get_visible())
+                self.assertAlmostEqual(cross_x.get_xdata()[0],x)
+                self.assertAlmostEqual(cross_y.get_ydata()[0],y)
+            check_crosshairs(20,20)
+            fig.canvas.callbacks.process('figure_leave_event', Event('figure_leave_event',fig.canvas))
+            self.assertFalse(cross_x.get_visible())
+            self.assertFalse(cross_y.get_visible())
             event('button_press_event',20,20)
+            check_crosshairs(120,120)
             event('button_press_event',120,120)
-            event('motion_notify_event',46,70)
+            check_crosshairs(46,70)
             self.assertTrue(any(t.get_text()=='Quarter: 2025Q2' for t in fig.texts))
             event('button_press_event',46,70)
+            check_crosshairs(100,50)
+            event('motion_notify_event',.5,.5,fig.axes[1])
+            self.assertFalse(cross_x.get_visible())
+            self.assertFalse(cross_y.get_visible())
+            check_crosshairs(100,50)
             event('button_press_event',100,50)
+            self.assertFalse(cross_x.get_visible())
+            self.assertFalse(cross_y.get_visible())
+            event('motion_notify_event',90,60)
+            self.assertFalse(cross_x.get_visible())
             button('Save and next')
         with patch.object(plt,'show',side_effect=interact), patch.object(calibrate,'run') as run:
             result=calibrate.launch(self.config_path,name,queue_position='1 of 2 remaining',advance_end=True)
@@ -156,6 +178,10 @@ class QueueTests(unittest.TestCase):
             end=next(a for a in fig.axes if abs(a.get_position().y0-.59)<.001 and abs(a.get_position().x0-.81)<.001)
             self.assertEqual(end.texts[-1].get_text(),'2026Q1')
             button('Adjust top left')
+            event('motion_notify_event',21,21)
+            crosshairs = [line for line in ax.lines if (line.get_gid() or '').startswith('cursor-crosshair')]
+            self.assertEqual(len(crosshairs),2)
+            self.assertTrue(all(line.get_visible() for line in crosshairs))
             event('button_press_event',21,21)
             button('Accept box')
             self.assertTrue(any(t.get_text()=='3. LAST HISTORICAL point' for t in fig.texts))

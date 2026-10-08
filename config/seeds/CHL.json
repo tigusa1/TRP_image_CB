@@ -1,8 +1,6 @@
 {
   "country": "CHL",
   "variable": "CPI",
-  "input_directory": "/Users/ti/Library/CloudStorage/OneDrive-JohnsHopkins/T Rowe Price climate project/CHL/Inflation_screenshots",
-  "output_directory": "output/CHL",
   "directory_timeout_seconds": 20,
   "calibration_defaults": {
     "historical_rgb": [
@@ -17,6 +15,9 @@
     "y_min": -3,
     "y_max": 12
   },
+  "config_role": "seed",
+  "input_directory": "data/CHL/screenshots",
+  "output_directory": "output/CHL",
   "images": {
     "CHL_2012_Q2.png": {
       "image_size": [
@@ -1874,6 +1875,5 @@
       "historical_color_tolerance": 45,
       "plot_box_style": "open_axes"
     }
-  },
-  "last_calibrated_image": "CHL_2026_Q3.png"
+  }
 }

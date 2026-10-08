@@ -1,6 +1,87 @@
 # Inflation chart digitizer
 
+**Short guides:** [Students](README_UG.md) · [Poppy / country supervisors](README_POPPY.md)
+
 Extract quarterly historical curves and darkest-forecast-band midpoints from PNG charts. Produces deterministic annotated PNGs, CSVs, Excel tables, and a local HTML review report. Source images are never modified. No API key, internet service, or GPU is needed to run it.
+
+## Shared seeds and personal progress
+
+Git tracks `config/seeds/COUNTRY.json`. It does **not** track working files
+`config/COUNTRY.json`. Each person has their own local checkout, virtual environment,
+PNGs, working config, and output folder. Seed files cannot be passed directly to
+calibration, axis review, extraction, or conversion: initialize a working copy first.
+Existing local configs have been preserved; existing PyCharm run parameters still work.
+
+### Supervisor: start a country, then hand it off
+
+For a new country such as PER, create a working config once:
+
+```bash
+python init_country.py PER
+```
+
+Put PNGs in `data/PER/screenshots/`. Alternatively specify an existing local folder:
+
+```bash
+python init_country.py PER --input "/path/to/PER/screenshots"
+```
+
+The command copies an existing shared seed, or starts with an empty calibration
+if none exists. It refuses to overwrite an existing working config. To change a
+local path later, edit `input_directory` in your ignored working JSON.
+Relative input and output directories resolve from the project root.
+
+Calibrate representative images, inspect their overlays, and publish selected
+saved examples into the shared seed:
+
+```bash
+python calibrate.py --config config/PER.json
+python publish_seed.py PER --image PER_2020_Q1.png --image PER_2024_Q3.png
+```
+
+Use real filenames from your assignment. Publishing replaces that country's seed
+with the selected examples; include every example you want to share. `--all`
+includes every saved calibration. It preserves their review statuses and does not
+certify that they have been checked. Commit and push the seed and any necessary
+source changes. No Git commit, push, or student notification happens automatically.
+
+### Student: initialize once, then continue
+
+Clone the repository, install the requirements, download the assigned PNGs, then:
+
+```bash
+python init_country.py PER
+python calibrate.py --config config/PER.json
+```
+
+The examples already calibrated in the seed are skipped automatically, provided
+filenames and image dimensions match. After pulling code updates, keep using the
+same working config. Do **not** replace it with the seed. Rebuild saved charts with:
+
+```bash
+python run_country.py --config config/PER.json --known-only
+```
+
+Seed corrections published later do not automatically merge into existing working
+configs. Transfer selected corrections deliberately, with a backup, instead of
+replacing the entire config and losing progress. Only one operator should write
+one working JSON at a time. Return the working config and outputs to the supervisor
+through project storage; Git ignores both and is not their backup.
+
+The initial BRA/CHL/THA seeds preserve all currently saved calibrations, with portable
+paths. New-country seeds can contain just your checked examples. PNGs belong under
+ignored `data/` or an external local folder; generated results remain in ignored
+`output/`. Use a clean output folder for each assignment because downstream CSV
+conversion includes all existing individual tables in that folder.
+
+### First pull for an existing collaborator
+
+This migration stops tracking the old `config/COUNTRY.json` paths. Before pulling
+this migration into an older clone, copy any working country JSONs outside the
+repository; Git may remove the formerly tracked files. After pulling, restore your
+working copies to `config/`. Subsequent pulls leave these ignored files alone.
+Fresh clones use `init_country.py` instead. The maintainer's current local working
+files were retained when making this change.
 
 ## PyCharm setup
 
@@ -8,7 +89,7 @@ Extract quarterly historical curves and darkest-forecast-band midpoints from PNG
 2. Select the project interpreter `.venv/bin/python` under **Settings → Python → Interpreter** (the exact labels vary by PyCharm version).
 3. If the virtual environment is missing, create a new local virtualenv using Python 3.13, at `.venv` in this project.
 4. Install dependencies with the selected interpreter: `python -m pip install -r requirements.txt`.
-5. Right-click `run_thailand.py` and run it. All paths default to this project's configuration, independent of PyCharm's working directory.
+5. On a fresh clone, run `python init_country.py THA` and provide matching PNGs before right-clicking `run_thailand.py` to run it. All paths default to this project's configuration, independent of PyCharm's working directory.
 
 The current setup includes two visually checked seed calibrations: `THA_2000_Q4.png` and `THA_2025_Q3.png`. These are image-based estimates, not externally verified source data.
 
@@ -84,7 +165,7 @@ In the calibration window:
 
 1. Enter the first and last plotted quarter and the vertical-axis minimum and maximum. Quarters refer to the plotting-box edges, not the first and last printed year labels. Confirm that time is evenly spaced and the vertical scale is linear.
 2. Inspect the orange suggested rectangle and click **Accept box** if it follows the plot axes. To fix one corner, choose **Adjust top left** or **Adjust bottom right**, click its correct position, then accept. Alternatively, click top left and bottom right directly to replace both corners. If no box is detected, select both corners manually. Existing calibrations show their saved box; new images use neutral horizontal and vertical axis lines to estimate it.
-3. Move the cursor to the final historical observation, where the fan begins. A dashed vertical guide snaps to the nearest quarter and extends through the horizontal-axis labels; the sidebar displays that quarter. Click to select it. The guide remains visible after selection. This sets the historical/forecast boundary independently of the filename's forecast vintage.
+3. Move the cursor to the final historical observation, where the fan begins. A dashed vertical guide snaps to the nearest quarter and extends through the horizontal-axis labels; the sidebar displays that quarter. Click to select it. The guide remains visible after selection. This sets the historical/forecast boundary independently of the filename's forecast vintage. If the red quarter-snapping vertical guide does not line up with the quarters on the chart, the **First quarter** / **Last quarter** values or the plot box are probably wrong. Check and correct them before continuing.
 4. Click inside the darkest forecast band, away from text and grid lines.
 5. Click **Save and extract**. Review the resulting overlay before using the values.
 
@@ -254,3 +335,26 @@ darkest GOLD band, avoiding the blue target lines. Save and next saves each char
 
 Outputs go to `output/BRA`, including automatically updated `forecasts.csv`.
 Axis review and conversion use the same `--config config/BRA.json` parameter.
+
+## Import central estimates from Excel report tables
+
+For a country workbook with one sheet per report, run:
+
+```bash
+python import_excel.py --config config/BRA.json --excel "/path/to/BRA CPI.xlsx"
+```
+
+Use sheet names such as `2015 Mar`, `2015 Jun`, `2015 Sep`, `2015 Dec`, or `2015Q1`.
+The first row must include `Period` and `central`. Use either a separate `Year`
+column or a combined Period such as `2015 2`. Quarters may be 1–4, Q1–Q4, or
+I–IV. Central values must be numbers in percentage points (8.1 means 8.1%).
+Non-report sheets such as `wraprows` are skipped and listed. Missing/invalid
+values and duplicate report/target rows stop the import before source CSVs change.
+
+The importer stores the workbook values and source sheet/cell references in
+`output/BRA/tables/BRA_CPI_excel.csv` and rebuilds `output/BRA/forecasts.csv`.
+The output retains zero and negative horizons. Normal calibration and
+`convert_csv.py` refreshes include these saved table values automatically.
+After editing the Excel workbook, rerun the import command to replace its saved
+values. Include the imported source CSV when handing off work to another person.
+Table estimates do not create chart overlays or enter `quarterly_estimates.xlsx`.

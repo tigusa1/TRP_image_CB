@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 import json
+from inflation_digitizer.configuration import load_working_config, input_directory
 from pathlib import Path
 import sys
 import numpy as np
@@ -14,10 +15,10 @@ from inflation_digitizer.plot_box import detect_plot_box
 def launch(config_path, filename, template=None, *, queue_position=None, advance_end=False):
     import matplotlib.pyplot as plt
     from matplotlib.widgets import TextBox, Button
-    config = json.loads(config_path.read_text())
+    config = load_working_config(config_path)
     if Path(filename).name != filename:
         raise ValueError('Use a filename, not a full path, for --image')
-    path = Path(config['input_directory']).expanduser()/filename
+    path = input_directory(config)/filename
     im = Image.open(path).convert('RGB')
     pixels = np.asarray(im)
     w, h = im.size
@@ -102,6 +103,17 @@ def launch(config_path, filename, template=None, *, queue_position=None, advance
                               visible=False, zorder=5)
     quarter_readout = fig.text(0.77, 0.225, '', fontsize=11, color='#d60078')
 
+    # A white outline keeps the moving crosshairs visible over dark fan bands.
+    import matplotlib.patheffects as path_effects
+    crosshair_style = dict(color='black', lw=.8, visible=False, zorder=10,
+                           path_effects=[path_effects.withStroke(linewidth=2, foreground='white')])
+    cursor_x = ax.axvline(0, gid='cursor-crosshair-x', **crosshair_style)
+    cursor_y = ax.axhline(0, gid='cursor-crosshair-y', **crosshair_style)
+
+    def hide_crosshairs():
+        cursor_x.set_visible(False)
+        cursor_y.set_visible(False)
+
     def nearest_quarter(x):
         (l, t), (r, b) = picks[:2]
         start = quarter_number(fields['x_start'].text)
@@ -124,15 +136,30 @@ def launch(config_path, filename, template=None, *, queue_position=None, advance
         return snapped_x
 
     def move(event):
-        if len(picks) != 2:
-            return
-        if (event.inaxes != ax or event.xdata is None or
-                getattr(fig.canvas.manager.toolbar, 'mode', '') or
-                not picks[0][0] <= event.xdata <= picks[1][0]):
+        x, y = getattr(event, 'xdata', None), getattr(event, 'ydata', None)
+        on_image = (getattr(event, 'inaxes', None) == ax and
+                    x is not None and y is not None and
+                    not getattr(fig.canvas.manager.toolbar, 'mode', ''))
+        if on_image and len(picks) < 4:
+            cursor_x.set_xdata([x, x])
+            cursor_y.set_ydata([y, y])
+            cursor_x.set_visible(True)
+            cursor_y.set_visible(True)
+        else:
+            hide_crosshairs()
+        if len(picks) == 2:
+            if on_image and picks[0][0] <= x <= picks[1][0]:
+                guide_at(x)
+            else:
+                quarter_guide.set_visible(False)
+                quarter_readout.set_text('Hover over the endpoint.')
+        fig.canvas.draw_idle()
+
+    def leave(event):
+        hide_crosshairs()
+        if len(picks) == 2:
             quarter_guide.set_visible(False)
             quarter_readout.set_text('Hover over the endpoint.')
-        else:
-            guide_at(event.xdata)
         fig.canvas.draw_idle()
 
     def refresh_guide(text):
@@ -179,10 +206,13 @@ def launch(config_path, filename, template=None, *, queue_position=None, advance
         picks.append((x, y))
         markers.extend(ax.plot(x, y, 'o', ms=7, mfc='none', mec='#d60078', mew=2))
         instruction.set_text(hints[len(picks)])
+        if len(picks) == 4:
+            hide_crosshairs()
         if len(picks) == 2:
             show_selected_box()
         fig.canvas.draw_idle()
     def reset(event):
+        hide_crosshairs()
         picks.clear()
         adjustment[0] = None
         quarter_guide.set_visible(False)
@@ -249,7 +279,7 @@ def launch(config_path, filename, template=None, *, queue_position=None, advance
                 if key in seed:
                     c[key] = seed[key]
             validate_calibration(c, (w,h))
-            latest_config = json.loads(config_path.read_text())
+            latest_config = load_working_config(config_path)
             if filename in latest_config.get('images', {}):
                 backup = config_path.with_suffix('.json.bak')
                 backup.write_text(config_path.read_text())
@@ -297,7 +327,8 @@ def launch(config_path, filename, template=None, *, queue_position=None, advance
     save_button.on_clicked(save)
     fig.canvas.mpl_connect('button_press_event', click)
     fig.canvas.mpl_connect('motion_notify_event', move)
-    fig.canvas.mpl_connect('figure_leave_event', move)
+    fig.canvas.mpl_connect('figure_leave_event', leave)
+    fig.canvas.mpl_connect('axes_leave_event', leave)
     plt.show(block=True)
     if outcome[0] == 'saved':
         run(config_path, images=[filename])
@@ -310,8 +341,8 @@ def launch(config_path, filename, template=None, *, queue_position=None, advance
 
 def launch_queue(config_path, template=None, start_at=None, include_calibrated=False):
     """Process remaining images in filename order; save each result immediately."""
-    config = json.loads(config_path.read_text())
-    names = discover(Path(config['input_directory']).expanduser(),
+    config = load_working_config(config_path)
+    names = discover(input_directory(config),
                      config.get('directory_timeout_seconds', 20))
     if not names:
         raise ValueError('No PNG files found in the configured input folder.')
@@ -352,7 +383,7 @@ def launch_queue(config_path, template=None, start_at=None, include_calibrated=F
     finally:
         # Individual artifacts are saved after every completion; refresh the
         # combined report for all saved charts when stopping or finishing.
-        current = json.loads(config_path.read_text())
+        current = load_working_config(config_path)
         if current.get('images'):
             print('Refreshing combined results for all saved calibrations...', flush=True)
             run(config_path, known_only=True)

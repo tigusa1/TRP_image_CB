@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import html
 import json
+from .configuration import load_working_config, input_directory
 from pathlib import Path
 import subprocess
 import sys
@@ -50,8 +51,8 @@ def write_review(out, entries):
 
 
 def run(config_path: Path, known_only=False, images=None):
-    config = json.loads(config_path.read_text())
-    source = Path(config['input_directory']).expanduser()
+    config = load_working_config(config_path)
+    source = input_directory(config)
     calibrations = config.get('images', {})
     if images:
         names = images
