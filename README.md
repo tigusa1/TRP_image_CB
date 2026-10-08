@@ -14,17 +14,19 @@ Existing local configs have been preserved; existing PyCharm run parameters stil
 
 ### Supervisor: start a country, then hand it off
 
-For a new country such as PER, create a working config once:
+For a new country such as PER, download or sync its PNGs locally, then create a working config once:
 
 ```bash
-python init_country.py PER
+python init_country.py PER --input "YOUR LOCAL SCREENSHOT FOLDER"
 ```
 
-Put PNGs in `data/PER/screenshots/`. Alternatively specify an existing local folder:
+Replace the quoted placeholder with the full folder path on your computer. For OneDrive, use the downloaded or synced local folder, not a sharing URL. Keep the quotes around paths containing spaces. Folder names do not need to change; for example:
 
 ```bash
-python init_country.py PER --input "/path/to/PER/screenshots"
+python init_country.py COL --input "/your/local/path/COL/COL Screenshots"
 ```
+
+If you omit `--input`, the default is `data/PER/screenshots/` inside the project.
 
 The command copies an existing shared seed, or starts with an empty calibration
 if none exists. It refuses to overwrite an existing working config. To change a
@@ -47,12 +49,14 @@ source changes. No Git commit, push, or student notification happens automatical
 
 ### Student: initialize once, then continue
 
-Clone the repository, install the requirements, download the assigned PNGs, then:
+Clone the repository, install the requirements, and download or sync the assigned PNGs. The supervisor must commit and push the shared seed first; if you already cloned, run `git pull --ff-only` before initializing. Then:
 
 ```bash
-python init_country.py PER
+python init_country.py PER --input "YOUR LOCAL SCREENSHOT FOLDER"
 python calibrate.py --config config/PER.json
 ```
+
+Use your own local folder path in quotes. Initialization is once per assigned country; if `config/PER.json` exists, skip initialization and retain your progress. Run the calibration command whenever you want to start or resume.
 
 The examples already calibrated in the seed are skipped automatically, provided
 filenames and image dimensions match. After pulling code updates, keep using the
@@ -89,7 +93,7 @@ files were retained when making this change.
 2. Select the project interpreter `.venv/bin/python` under **Settings → Python → Interpreter** (the exact labels vary by PyCharm version).
 3. If the virtual environment is missing, create a new local virtualenv using Python 3.13, at `.venv` in this project.
 4. Install dependencies with the selected interpreter: `python -m pip install -r requirements.txt`.
-5. On a fresh clone, run `python init_country.py THA` and provide matching PNGs before right-clicking `run_thailand.py` to run it. All paths default to this project's configuration, independent of PyCharm's working directory.
+5. On a fresh clone, run `python init_country.py THA --input "YOUR LOCAL SCREENSHOT FOLDER"` and provide matching PNGs before right-clicking `run_thailand.py` to run it. All paths default to this project's configuration, independent of PyCharm's working directory.
 
 The current setup includes two visually checked seed calibrations: `THA_2000_Q4.png` and `THA_2025_Q3.png`. These are image-based estimates, not externally verified source data.
 

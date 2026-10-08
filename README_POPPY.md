@@ -31,7 +31,13 @@ python publish_seed.py PER --image PER_2020_Q1.png --image PER_2024_Q3.png
 ```
 
 This replaces `config/seeds/PER.json` with the selected examples.
-**List every example you want to share.** It does not upload anything.
+**List every example you want to share.** To share all saved calibrations after checking their overlays, use this instead:
+
+```bash
+python publish_seed.py PER --all
+```
+
+Publishing creates the local seed file; it does not upload anything.
 
 Commit and push the seed to GitHub. Give the student:
 
@@ -39,7 +45,13 @@ Commit and push the seed to GitHub. Give the student:
 - Your checked example overlays and any special instructions.
 - The software version to use (`git rev-parse --short HEAD`).
 
-The student runs `init_country.py PER` once. Your examples are copied and skipped automatically.
+After you push the seed, the student clones or pulls the updated repository, then runs once per assigned country:
+
+```bash
+python init_country.py PER --input "THEIR LOCAL SCREENSHOT FOLDER"
+```
+
+They replace the placeholder with their own full local path in quotes. A downloaded or synced OneDrive folder works; a sharing URL does not. Your examples are copied and skipped automatically. If their working config already exists, they keep it and skip initialization.
 Assign only one person at a time to each country's working config.
 
 ## 4. If you change code
