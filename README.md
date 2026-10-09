@@ -4,13 +4,13 @@
 
 Extract quarterly historical curves and darkest-forecast-band midpoints from PNG charts. Produces deterministic annotated PNGs, CSVs, Excel tables, and a local HTML review report. Source images are never modified. No API key, internet service, or GPU is needed to run it.
 
-## Shared seeds and personal progress
+## Country setup and personal progress
 
-Git tracks `config/seeds/COUNTRY.json`. It does **not** track working files
-`config/COUNTRY.json`. Each person has their own local checkout, virtual environment,
-PNGs, working config, and output folder. Seed files cannot be passed directly to
-calibration, axis review, extraction, or conversion: initialize a working copy first.
-Existing local configs have been preserved; existing PyCharm run parameters still work.
+Each person has their own checkout, virtual environment, locally synced PNGs,
+working config (`config/COUNTRY.json`), and output folder. Git ignores working
+configs and outputs. New configs start empty by default; students calibrate all
+assigned screenshots, including the supervisor's test examples. No seed handoff
+is required. Existing configs and saved progress are preserved.
 
 ### Supervisor: start a country, then hand it off
 
@@ -28,28 +28,24 @@ python init_country.py COL --input "/your/local/path/COL/COL Screenshots"
 
 If you omit `--input`, the default is `data/PER/screenshots/` inside the project.
 
-The command copies an existing shared seed, or starts with an empty calibration
-if none exists. It refuses to overwrite an existing working config. To change a
+The command starts with no calibrated screenshots, even if a shared seed exists.
+It refuses to overwrite an existing working config. To change a
 local path later, edit `input_directory` in your ignored working JSON.
 Relative input and output directories resolve from the project root.
 
-Calibrate representative images, inspect their overlays, and publish selected
-saved examples into the shared seed:
+Calibrate representative images and inspect their overlays:
 
 ```bash
 python calibrate.py --config config/PER.json
-python publish_seed.py PER --image PER_2020_Q1.png --image PER_2024_Q3.png
 ```
 
-Use real filenames from your assignment. Publishing replaces that country's seed
-with the selected examples; include every example you want to share. `--all`
-includes every saved calibration. It preserves their review statuses and does not
-certify that they have been checked. Commit and push the seed and any necessary
-source changes. No Git commit, push, or student notification happens automatically.
+Once the format works, give students the country code, private OneDrive access,
+and any special instructions. They repeat your test screenshots. Commit and push
+any necessary code changes so students can pull them before starting.
 
 ### Student: initialize once, then continue
 
-Clone the repository, install the requirements, and download or sync the assigned PNGs. The supervisor must commit and push the shared seed first; if you already cloned, run `git pull --ff-only` before initializing. Then:
+Clone the repository, install the requirements, and download or sync the assigned PNGs. If you already cloned, run `git pull --ff-only` to get the latest code before initializing. Then:
 
 ```bash
 python init_country.py PER --input "YOUR LOCAL SCREENSHOT FOLDER"
@@ -58,25 +54,25 @@ python calibrate.py --config config/PER.json
 
 Use your own local folder path in quotes. Initialization is once per assigned country; if `config/PER.json` exists, skip initialization and retain your progress. Run the calibration command whenever you want to start or resume.
 
-The examples already calibrated in the seed are skipped automatically, provided
-filenames and image dimensions match. After pulling code updates, keep using the
-same working config. Do **not** replace it with the seed. Rebuild saved charts with:
+Screenshots you have already calibrated are skipped automatically. After pulling
+code updates, keep using the same working config. Rebuild saved charts with:
 
 ```bash
 python run_country.py --config config/PER.json --known-only
 ```
 
-Seed corrections published later do not automatically merge into existing working
-configs. Transfer selected corrections deliberately, with a backup, instead of
-replacing the entire config and losing progress. Only one operator should write
-one working JSON at a time. Return the working config and outputs to the supervisor
-through project storage; Git ignores both and is not their backup.
+Return your working config and outputs through project storage; Git ignores both
+and is not their backup. PNGs can stay in the synced OneDrive folder. Use a clean
+output folder for each assignment because CSV exports include all saved source tables.
 
-The initial BRA/CHL/THA seeds preserve all currently saved calibrations, with portable
-paths. New-country seeds can contain just your checked examples. PNGs belong under
-ignored `data/` or an external local folder; generated results remain in ignored
-`output/`. Use a clean output folder for each assignment because downstream CSV
-conversion includes all existing individual tables in that folder.
+### Optional shared examples (advanced)
+
+The seed tools remain available, but are not needed for student assignments.
+To deliberately copy an existing seed during first-time initialization, add
+`--use-seed` to the initialization command. This never overwrites an existing config.
+Supervisors can publish all checked examples with `python publish_seed.py PER --all`
+and commit/push `config/seeds/PER.json`. Later seed updates do not merge into
+existing working configs automatically.
 
 ### First pull for an existing collaborator
 

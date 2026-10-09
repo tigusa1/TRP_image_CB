@@ -19,12 +19,12 @@ def quarter_label(value: int) -> str:
 
 
 def report_quarter(filename):
-    """Read a report quarter from either YEAR_Qn or YEAR_Mon filenames."""
+    """Read report quarters from filenames using underscores, spaces, or hyphens."""
     stem = Path(filename).stem
-    match = re.search(r'_(\d{4})_?Q([1-4])(?:$|_)', stem, re.IGNORECASE)
+    match = re.search(r'(?:^|[\s_-])(\d{4})[\s_-]*Q([1-4])(?=$|[\s_-])', stem, re.IGNORECASE)
     if match:
         return f'{match[1]}Q{match[2]}'
-    match = re.search(r'_(\d{4})_(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$', stem, re.IGNORECASE)
+    match = re.search(r'(?:^|[\s_-])(\d{4})[\s_-]+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$', stem, re.IGNORECASE)
     if match:
         month = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'].index(match[2].lower())
         return f'{match[1]}Q{month//3+1}'

@@ -19,7 +19,7 @@ cd TRP_image_CB
 3. Open this project folder in your preferred IDE. Create and activate a Python **3.13** virtual environment in its terminal.
 4. Run all remaining commands from the project folder containing `calibrate.py`.
 5. Download or sync the assigned PNGs, including the supervisor's examples, to a local folder. Keep its existing name (e.g. `COL/COL Screenshots`). Do not rename or resize the PNGs.
-6. Make sure the supervisor has pushed the shared examples. If you already cloned the repository, run `git pull --ff-only` before initialization.
+6. If you already cloned the repository, run `git pull --ff-only` to get the latest code before initialization.
 7. Run:
 
 ```bash
@@ -36,7 +36,7 @@ python init_country.py COL --input "/your/local/path/COL/COL Screenshots"
 ```
 
 Initialize only once per assigned country. Your progress is saved in `config/PER.json`. If it already exists, skip initialization and keep it. To change the screenshot folder later, update `input_directory` in that working config.
-**Do not replace it or edit `config/seeds/PER.json`.**
+New configs start with no completed screenshots. Calibrate all assigned images, including the examples Poppy tested. No shared seed is needed.
 
 ## 2. Digitize
 
@@ -52,7 +52,7 @@ For each chart:
 4. Click inside the darkest forecast band, away from grid lines.
 5. Click **Save and next**.
 
-Completed examples are skipped. Closing the window pauses work; the current unsaved chart is not saved. Run the same command to resume.
+Screenshots you have already saved are skipped. Closing the window pauses work; the current unsaved chart is not saved. Run the same command to resume.
 
 ## 3. Check and submit
 

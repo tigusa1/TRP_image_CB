@@ -49,6 +49,23 @@ class ExtractionTests(unittest.TestCase):
         path.write_bytes(self.path.read_bytes())
         self.assertEqual(extract(path,self.c,'BRA').rows[0]['vintage'],'2025Q1')
 
+    def test_spaced_report_filename_extracts_and_exports(self):
+        import pandas as pd
+        from inflation_digitizer.forecast_export import convert_frame
+        for name in ('PER 2026 Q2.png', 'PER_2026_Q2.png', 'PER-2026-Q2.png',
+                     'PER 2026Q2.png', 'PER 2026 Jun.png'):
+            with self.subTest(name=name):
+                self.assertEqual(report_quarter(name),'2026Q2')
+        self.assertEqual(report_quarter('PER 2026 Q20.png'),'PER 2026 Q20')
+        names=['PER 2026 Q2.png','PER 2025 Q4.png','PER 2026 Q1.png']
+        self.assertEqual(sorted(names,key=report_sort_key),[names[1],names[2],names[0]])
+        self.make_image()
+        path=self.path.with_name('PER 2026 Q2.png')
+        path.write_bytes(self.path.read_bytes())
+        result=convert_frame(pd.DataFrame(extract(path,self.c,'PER').rows))
+        self.assertEqual(result.report.unique().tolist(),['2026Q2'])
+        self.assertEqual(result.h.tolist(),[-5,-4,-3,-2,-1])
+
     def test_unsupported_sampling_is_rejected(self):
         with self.assertRaisesRegex(ValueError,'Only quarterly'):
             validate_calibration({**self.c,'sampling':'quarter_end_month'},(140,140))

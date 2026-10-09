@@ -44,14 +44,16 @@ def seed_config(config, names):
     return seed
 
 
-def initialize_country(country, source=None, root=ROOT):
+def initialize_country(country, source=None, root=ROOT, *, use_seed=False):
     root = Path(root)
     country = country_code(country)
     destination = root/'config'/f'{country}.json'
     if destination.exists():
         raise ValueError(f'{destination} already exists; its progress was preserved. Continue using that file.')
     seed = root/'config/seeds'/f'{country}.json'
-    if seed.exists():
+    if use_seed:
+        if not seed.exists():
+            raise ValueError(f'No shared seed found: {seed}')
         config = json.loads(seed.read_text())
     else:
         config = dict(country=country, variable='CPI', images={},

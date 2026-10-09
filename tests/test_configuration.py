@@ -18,7 +18,7 @@ class ConfigurationTests(unittest.TestCase):
         seed=dict(country='PER',config_role='seed',input_directory='data/PER/screenshots',
                   output_directory='output/PER',images={'PER_2020_Q1.png':{'review_status':'reviewed'}})
         p.write_text(json.dumps(seed))
-        path=initialize_country('PER',root=self.root)
+        path=initialize_country('PER',root=self.root,use_seed=True)
         working=load_working_config(path)
         self.assertEqual(working['images'],seed['images'])
         self.assertEqual(working['config_role'],'working')
@@ -29,6 +29,30 @@ class ConfigurationTests(unittest.TestCase):
         self.assertEqual(path.read_bytes(),before)
         with self.assertRaisesRegex(ValueError,'shared seed'):
             load_working_config(p)
+
+    def test_default_ignores_seed_and_preserves_existing_progress(self):
+        seed=self.root/'config/seeds/PER.json'
+        seed.parent.mkdir(parents=True)
+        seed.write_text(json.dumps(dict(country='PER',images={'example.png':{}},
+                                       calibration_defaults={'y_max':100})))
+        original=seed.read_bytes()
+        path=initialize_country('PER',source=self.root/'OneDrive/screenshots',root=self.root)
+        config=load_working_config(path)
+        self.assertEqual(config['images'],{})
+        self.assertNotIn('calibration_defaults',config)
+        self.assertEqual(config['input_directory'],str((self.root/'OneDrive/screenshots').resolve()))
+        config['images']={'student.png':{'y_max':5}}
+        path.write_text(json.dumps(config))
+        saved=path.read_bytes()
+        with self.assertRaisesRegex(ValueError,'progress was preserved'):
+            initialize_country('PER',root=self.root)
+        self.assertEqual(path.read_bytes(),saved)
+        self.assertEqual(seed.read_bytes(),original)
+
+    def test_requested_missing_seed_does_not_create_config(self):
+        with self.assertRaisesRegex(ValueError,'No shared seed'):
+            initialize_country('PER',root=self.root,use_seed=True)
+        self.assertFalse((self.root/'config/PER.json').exists())
 
     def test_new_country_and_relative_paths(self):
         path=initialize_country('per',root=self.root)
